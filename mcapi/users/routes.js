@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const UserController = require('./controller');
+const AuthController = require('../authorization/controller');
 const { check } = require('../common/middlewears/IsAuthenticated');
 
 router.get('/', check, UserController.getUser);
