@@ -1,0 +1,2 @@
+run
+psql -U postgres -d yourdb -f init.sql
