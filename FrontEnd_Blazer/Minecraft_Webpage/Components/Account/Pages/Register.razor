@@ -1,0 +1,75 @@
+﻿@page "/Account/Register"
+@using System.ComponentModel.DataAnnotations
+@using Minecraft_Webpage.Data
+@rendermode InteractiveServer
+
+@inject UserService UserService
+@inject NavigationManager NavigationManager
+
+<h1>Register</h1>
+
+<EditForm Model="Input" OnValidSubmit="RegisterUser" FormName="Register">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.Username" id="username" class="form-control" placeholder="Username" />
+        <label for="username">Username</label>
+        <ValidationMessage For="() => Input.Username" />
+    </div>
+
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.Password" id="password" type="password" class="form-control" placeholder="Password" />
+        <label for="password">Password</label>
+        <ValidationMessage For="() => Input.Password" />
+    </div>
+
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.MinecraftUsername" id="minecraftUsername" class="form-control" placeholder="Minecraft Username" />
+        <label for="minecraftUsername">Minecraft Username</label>
+        <ValidationMessage For="() => Input.MinecraftUsername" />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+</EditForm>
+
+@code {
+    private string? Message;
+    private InputModel Input { get; set; } = new();
+
+    private async Task RegisterUser()
+    {
+        if (UserService == null)
+        {
+            Message = "Internal error: User service not available.";
+            return;
+        }
+
+        bool success = await UserService.CreateUserAsync(Input.Username, Input.Password, Input.MinecraftUsername);
+
+        if (!success)
+        {
+            Message = "Registration failed. The username may already exist.";
+            return;
+        }
+
+        Message = "Registration successful!";
+        NavigationManager.NavigateTo("/Account/Login");
+    }
+
+    public class InputModel
+    {
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
+        public string Username { get; set; } = "";
+
+        [Required]
+        [StringLength(100, MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = "";
+
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
+        public string MinecraftUsername { get; set; } = "";
+    }
+}

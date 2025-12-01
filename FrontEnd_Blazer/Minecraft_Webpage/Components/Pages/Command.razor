@@ -1,0 +1,38 @@
+﻿@page "/Command"
+@using Minecraft_Webpage.Data
+@using Minecraft_Webpage.Data.Player
+<h3>Command Log</h3>
+<div class="logsStyles">
+    <form action="/" method="get">
+        
+    
+    </form>
+</div>
+Command Input
+<div class="logsStyles_Input">
+    <EditForm action="/" method="post" Model="_message" class ="input">
+        <button type="submit" class="send-btn">
+            Send
+        </button>
+        
+       
+    </EditForm>
+</div>
+
+@code {
+    Player player_1 = new Player("Pwest");
+    
+    private Message _message = new Message();
+
+    private void HandleSend()
+    {
+        
+    }
+
+    public class Message
+    {
+        public string Text { get; set; }
+    }
+
+
+}
