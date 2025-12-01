@@ -5,22 +5,14 @@ namespace Minecraft_Webpage.Data.Player
 {
     public class Player :Hub
     {
-        public Guid ID = Guid.Empty;
-        public string UserName = string.Empty;
-
-        public Player(string username)
-        {
-            UserName = username;
-            ID = Guid.NewGuid();
+            public Guid UserId { get; set; } // UUID from PostgreSQL
+            public string Username { get; set; } = string.Empty;
+            public string Password { get; set; } = string.Empty;
+            public string MinecraftUsername { get; set; } = string.Empty;
         }
-        public async Task SendMessage_ID(this Player player, string message)
-        {
 
-            await Clients.All.SendAsync("ReceiveMessage", player.UserName, message);
-            Debug.WriteLine($"{player.UserName},{message},{player.ID}");
-        }
-    }
 
+   
    
 
 }

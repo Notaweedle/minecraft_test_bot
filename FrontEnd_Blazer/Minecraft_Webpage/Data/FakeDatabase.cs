@@ -4,7 +4,7 @@
     {
         public List<Player> players_list =
             [
-            new Player ("fuck")
+            //new Player ("fuck")
             ];
         
 
