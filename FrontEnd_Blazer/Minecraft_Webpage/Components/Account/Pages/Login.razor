@@ -1,0 +1,70 @@
+﻿@page "/Account/Login"
+@using System.ComponentModel.DataAnnotations
+@using Minecraft_Webpage.Data
+@rendermode InteractiveServer
+@inject UserService UserService
+@inject NavigationManager NavigationManager
+
+<h1>Login</h1>
+
+<EditForm Model="Input" OnValidSubmit="LoginUser" FormName="Login">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.Username" id="username" class="form-control" placeholder="Username" />
+        <label for="username">Username</label>
+        <ValidationMessage For="() => Input.Username" />
+    </div>
+
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.Password" id="password" type="password" class="form-control" placeholder="Password" />
+        <label for="password">Password</label>
+        <ValidationMessage For="() => Input.Password" />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert alert-danger mt-3">@Message</div>
+}
+
+@code {
+    private string? Message;
+    private LoginModel Input { get; set; } = new();
+
+    private async Task LoginUser()
+    {
+        if (UserService == null)
+        {
+            Message = "Internal error: User service not available.";
+            return;
+        }
+
+        bool valid = await UserService.ValidateUserAsync(Input.Username, Input.Password);
+
+        if (!valid)
+        {
+            Message = "Invalid username or password.";
+            return;
+        }
+
+        // Redirect to homepage or dashboard after successful login
+        Message = "Login successful!";
+        NavigationManager.NavigateTo("/");
+    }
+
+    public class LoginModel
+    {
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
+        public string Username { get; set; } = "";
+
+        [Required]
+        [StringLength(100, MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = "";
+    }
+}
