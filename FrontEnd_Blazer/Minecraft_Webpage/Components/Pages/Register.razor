@@ -2,11 +2,15 @@
 @using System.ComponentModel.DataAnnotations
 @using Minecraft_Webpage.Data
 @rendermode InteractiveServer
-
-@inject UserService UserService
 @inject NavigationManager NavigationManager
+@inject HttpClient HttpClient
 
 <h1>Register</h1>
+
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert alert-danger">@Message</div>
+}
 
 <EditForm Model="Input" OnValidSubmit="RegisterUser" FormName="Register">
     <DataAnnotationsValidator />
@@ -30,31 +34,46 @@
         <ValidationMessage For="() => Input.MinecraftUsername" />
     </div>
 
+    <!-- REMOVED @onclick, kept only type="submit" -->
     <button type="submit" class="btn btn-primary w-100">Register</button>
 </EditForm>
 
 @code {
     private string? Message;
+
+    [SupplyParameterFromForm]
     private InputModel Input { get; set; } = new();
 
     private async Task RegisterUser()
     {
-        if (UserService == null)
+        try
         {
-            Message = "Internal error: User service not available.";
-            return;
+            Console.WriteLine($"Registering: Username={Input.Username}, MC={Input.MinecraftUsername}");
+
+            var response = await HttpClient.PostAsJsonAsync("signup", new
+            {
+                username = Input.Username?.Trim(),
+                password = Input.Password,
+                mcUsername = Input.MinecraftUsername?.Trim()
+            });
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error details: {errorContent}");
+                Message = $"Registration failed: {errorContent}";
+                return;
+            }
+
+            Message = "Registration successful!";
+            await Task.Delay(1000); // Brief delay to show success message
+            NavigationManager.NavigateTo("/Account/Login");
         }
-
-        bool success = await UserService.CreateUserAsync(Input.Username, Input.Password, Input.MinecraftUsername);
-
-        if (!success)
+        catch (Exception ex)
         {
-            Message = "Registration failed. The username may already exist.";
-            return;
+            Console.WriteLine($"Exception: {ex}");
+            Message = $"An error occurred: {ex.Message}";
         }
-
-        Message = "Registration successful!";
-        NavigationManager.NavigateTo("/Account/Login");
     }
 
     public class InputModel

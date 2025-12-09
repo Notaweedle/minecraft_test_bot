@@ -2,8 +2,8 @@
 @using System.ComponentModel.DataAnnotations
 @using Minecraft_Webpage.Data
 @rendermode InteractiveServer
-@inject UserService UserService
 @inject NavigationManager NavigationManager
+@inject HttpClient HttpClient
 
 <h1>Login</h1>
 
@@ -37,13 +37,13 @@
 
     private async Task LoginUser()
     {
-        if (UserService == null)
+        var response = await HttpClient.PostAsJsonAsync("login", new
         {
-            Message = "Internal error: User service not available.";
-            return;
-        }
+            username = Input.Username,
+            password = Input.Password
+        });
 
-        bool valid = await UserService.ValidateUserAsync(Input.Username, Input.Password);
+        bool valid = response.IsSuccessStatusCode;
 
         if (!valid)
         {
