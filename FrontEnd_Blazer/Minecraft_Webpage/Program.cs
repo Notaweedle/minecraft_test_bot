@@ -10,8 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddCascadingAuthenticationState();
-
 // API
 builder.Services.AddScoped(sp =>
     new HttpClient { BaseAddress = new Uri("http://localhost:3000/") });
