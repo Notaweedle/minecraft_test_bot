@@ -110,3 +110,44 @@ h1:focus {
     .send-btn:hover {
         background-color: #45a049;
     }
+
+details summary {
+    cursor: pointer;
+    width: 350px;
+    padding: 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #eee;
+    user-select: none;
+}
+
+.cmd-list {
+    width: 350px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: black;
+}
+
+    .cmd-list div {
+        padding: 6px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        
+    }
+
+        .cmd-list div:hover {
+            background: #41a7fd;
+        }
+
+.bubble {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    background: #000000;
+    width: 350px;
+    font-size: 14px;
+   

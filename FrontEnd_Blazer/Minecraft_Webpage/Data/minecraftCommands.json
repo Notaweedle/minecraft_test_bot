@@ -1,0 +1,390 @@
+[
+  {
+    "command": "/advancement",
+    "description": "Gives, removes, or checks player advancements."
+  },
+  {
+    "command": "/attribute",
+    "description": "Queries, adds, removes or sets an entity attribute."
+  },
+  {
+    "command": "/ban",
+    "description": "Adds player to banlist."
+  },
+  {
+    "command": "/ban-ip",
+    "description": "Adds IP address to banlist."
+  },
+  {
+    "command": "/banlist",
+    "description": "Displays banlist."
+  },
+  {
+    "command": "/bossbar",
+    "description": "Creates and modifies bossbars."
+  },
+  {
+    "command": "/clear",
+    "description": "Clears items from player inventory."
+  },
+  {
+    "command": "/clone",
+    "description": "Copies blocks from one place to another."
+  },
+  {
+    "command": "/damage",
+    "description": "Applies damage to the specified entities."
+  },
+  {
+    "command": "/data",
+    "description": "Gets, merges, modifies, and removes block entity, entity, and command storage NBT data."
+  },
+  {
+    "command": "/datapack",
+    "description": "Controls loaded data packs."
+  },
+  {
+    "command": "/debug",
+    "description": "Starts or stops a debugging session."
+  },
+  {
+    "command": "/defaultgamemode",
+    "description": "Sets the default game mode."
+  },
+  {
+    "command": "/deop",
+    "description": "Revokes operator status from a player."
+  },
+  {
+    "command": "/dialog",
+    "description": "Shows dialog to clients."
+  },
+  {
+    "command": "/difficulty",
+    "description": "Sets the difficulty level."
+  },
+  {
+    "command": "/effect",
+    "description": "Adds or removes status effects."
+  },
+  {
+    "command": "/enchant",
+    "description": "Adds an enchantment to a player's selected item."
+  },
+  {
+    "command": "/execute",
+    "description": "Executes another command."
+  },
+  {
+    "command": "/experience",
+    "description": "Adds or removes player experience."
+  },
+  {
+    "command": "/fetchprofile",
+    "description": "Fetches a player profile."
+  },
+  {
+    "command": "/fill",
+    "description": "Fills a region with a specific block."
+  },
+  {
+    "command": "/fillbiome",
+    "description": "Fills a region with a specific biome."
+  },
+  {
+    "command": "/forceload",
+    "description": "Forces chunks to constantly be loaded or not."
+  },
+  {
+    "command": "/function",
+    "description": "Runs a function."
+  },
+  {
+    "command": "/gamemode",
+    "description": "Sets a player's game mode."
+  },
+  {
+    "command": "/gamerule",
+    "description": "Sets or queries a game rule value."
+  },
+  {
+    "command": "/give",
+    "description": "Gives an item to a player."
+  },
+  {
+    "command": "/help",
+    "description": "Provides help for commands."
+  },
+  {
+    "command": "/item",
+    "description": "Manipulates items in inventories."
+  },
+  {
+    "command": "/jfr",
+    "description": "Starts or stops a JFR profiling."
+  },
+  {
+    "command": "/kick",
+    "description": "Kicks a player off a server."
+  },
+  {
+    "command": "/kill",
+    "description": "Kills entities (players, mobs, items, etc.)."
+  },
+  {
+    "command": "/list",
+    "description": "Lists players on the server."
+  },
+  {
+    "command": "/locate",
+    "description": "Locates closest structure, biome, or point of interest."
+  },
+  {
+    "command": "/loot",
+    "description": "Drops items from an inventory slot onto the ground."
+  },
+  {
+    "command": "/me",
+    "description": "Displays a message about the sender."
+  },
+  {
+    "command": "/msg",
+    "description": "Displays a private message to other players."
+  },
+  {
+    "command": "/op",
+    "description": "Grants operator status to a player."
+  },
+  {
+    "command": "/pardon",
+    "description": "Removes entries from the banlist."
+  },
+  {
+    "command": "/pardon-ip",
+    "description": "Removes entries from the banlist."
+  },
+  {
+    "command": "/particle",
+    "description": "Creates particles."
+  },
+  {
+    "command": "/perf",
+    "description": "Captures info and metrics about the game for 10 seconds."
+  },
+  {
+    "command": "/place",
+    "description": "Places a configured feature, jigsaw, template, or structure."
+  },
+  {
+    "command": "/playsound",
+    "description": "Plays a sound."
+  },
+  {
+    "command": "/publish",
+    "description": "Opens single-player world to local network."
+  },
+  {
+    "command": "/random",
+    "description": "Draw a random value or control the random number sequence."
+  },
+  {
+    "command": "/recipe",
+    "description": "Gives or takes player recipes."
+  },
+  {
+    "command": "/reload",
+    "description": "Reloads loot tables, advancements, and functions from disk."
+  },
+  {
+    "command": "/return",
+    "description": "Controls execution flow inside functions and changes their return value."
+  },
+  {
+    "command": "/ride",
+    "description": "Makes entities ride other entities, or stops entities from riding."
+  },
+  {
+    "command": "/rotate",
+    "description": "Changes the rotation of an entity."
+  },
+  {
+    "command": "/save-all",
+    "description": "Saves the server to disk."
+  },
+  {
+    "command": "/save-off",
+    "description": "Disables automatic server saves."
+  },
+  {
+    "command": "/save-on",
+    "description": "Enables automatic server saves."
+  },
+  {
+    "command": "/say",
+    "description": "Displays a message to multiple players."
+  },
+  {
+    "command": "/schedule",
+    "description": "Delays execution of a function."
+  },
+  {
+    "command": "/scoreboard",
+    "description": "Manages scoreboard objectives and players."
+  },
+  {
+    "command": "/seed",
+    "description": "Displays the world seed."
+  },
+  {
+    "command": "/setblock",
+    "description": "Changes a block to another block."
+  },
+  {
+    "command": "/setidletimeout",
+    "description": "Sets the time before idle players are kicked."
+  },
+  {
+    "command": "/setworldspawn",
+    "description": "Sets the world spawn."
+  },
+  {
+    "command": "/spawnpoint",
+    "description": "Sets the spawn point for a player."
+  },
+  {
+    "command": "/spectate",
+    "description": "Spectates an entity as a player in spectator mode."
+  },
+  {
+    "command": "/spreadplayers",
+    "description": "Teleports entities to random locations."
+  },
+  {
+    "command": "/stop",
+    "description": "Stops a server."
+  },
+  {
+    "command": "/stopsound",
+    "description": "Stops a sound."
+  },
+  {
+    "command": "/summon",
+    "description": "Summons an entity."
+  },
+  {
+    "command": "/tag",
+    "description": "Controls entity tags."
+  },
+  {
+    "command": "/team",
+    "description": "Controls teams."
+  },
+  {
+    "command": "/teammsg",
+    "description": "Sends a message to team members."
+  },
+  {
+    "command": "/teleport",
+    "description": "Teleports entities."
+  },
+  {
+    "command": "/tell",
+    "description": "Sends a private message."
+  },
+  {
+    "command": "/tellraw",
+    "description": "Displays a JSON text message to players."
+  },
+  {
+    "command": "/test",
+    "description": "Manages and executes GameTests."
+  },
+  {
+    "command": "/tick",
+    "description": "Controls the tick rate of the game."
+  },
+  {
+    "command": "/time",
+    "description": "Changes or queries the world's game time."
+  },
+  {
+    "command": "/title",
+    "description": "Manages screen titles."
+  },
+  {
+    "command": "/tm",
+    "description": "Sends a message to the team (alias of /teammsg)."
+  },
+  {
+    "command": "/tp",
+    "description": "Teleports entities (alias of /teleport)."
+  },
+  {
+    "command": "/transfer",
+    "description": "Triggers a transfer of a player to another server."
+  },
+  {
+    "command": "/trigger",
+    "description": "Sets a trigger to be activated."
+  },
+  {
+    "command": "/version",
+    "description": "Presents the server's game version."
+  },
+  {
+    "command": "/w",
+    "description": "Sends a private message (alias of /tell)."
+  },
+  {
+    "command": "/waypoint",
+    "description": "Manages waypoints displayed on the locator bar."
+  },
+  {
+    "command": "/weather",
+    "description": "Sets the weather."
+  },
+  {
+    "command": "/whitelist",
+    "description": "Manages the server whitelist."
+  },
+  {
+    "command": "/worldborder",
+    "description": "Manages the world border."
+  },
+  {
+    "command": "/xp",
+    "description": "Adds or removes player experience (alias of /experience)."
+  },
+  {
+    "command": "/warden_spawn_tracker",
+    "description": "Shows how many warnings a sculk shrieker has before spawning a warden."
+  },
+  {
+    "command": "/debugpath",
+    "description": "Shows the calculated path for entities."
+  },
+  {
+    "command": "/debugmobspawning",
+    "description": "Displays mob spawning information."
+  },
+  {
+    "command": "/raid",
+    "description": "Starts a raid."
+  },
+  {
+    "command": "/serverpack",
+    "description": "Configures a server resource pack."
+  },
+  {
+    "command": "/spawn_armor_trims",
+    "description": "Spawns all possible combinations of armor trims."
+  },
+  {
+    "command": "/debugconfig",
+    "description": "Configuration options for debugging."
+  },
+  {
+    "command": "/chase",
+    "description": "Syncs movement between clients."
+  }
+]

@@ -4,6 +4,7 @@ namespace Minecraft_Webpage.Data
 {
     using Npgsql;
     using Dapper;
+    
 
     public class UserService
     {
