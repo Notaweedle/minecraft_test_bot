@@ -8,11 +8,13 @@ const Ajv = require('ajv');
 const ajv = new Ajv();
 const schema = {
   type: 'object',
-  required: ['username', 'password', 'mcUsername'],
+  required: ['username', 'password', 'serverIp','serverPort','serverPassword'],
   properties: {
     username: { type: 'string', minLength: 3 },
     password: { type: 'string', minLength: 6 },
-    mcUsername: { type: 'string', minLength: 3 }
+    serverIp: { type: 'string', minLength: 3 },
+    serverPort: { type: 'number', minimum: 1, maximum: 65535 },
+    serverPassword: { type: 'string', minLength: 3 },
   }
 };
 const validate = ajv.compile(schema);
@@ -28,13 +30,12 @@ exports.register = async (req, res) => {
     return res.status(400).json({ error: 'Invalid input', details: validate.errors });
   }
   try {
-    const { username, password, mcUsername } = req.body;
+    const { username, password, serverIp, serverPort, serverPassword } = req.body;
     
-    console.log('Attempting to register:', { username, mcUsername }); // Debug log
+    console.log('Attempting to register:', { username }); // Debug log
     
     // Check both username and mcUsername
     const existingUsername = await User.findOne({ where: { username } });
-    const existingMcUsername = await User.findOne({ where: { mcUsername } });
     
     if (existingUsername) {
       console.log('Username conflict:', username);
@@ -44,19 +45,13 @@ exports.register = async (req, res) => {
       });
     }
     
-    if (existingMcUsername) {
-      console.log('Minecraft username conflict:', mcUsername);
-      return res.status(409).json({ 
-        success: false, 
-        error: 'Minecraft username already exists' 
-      });
-    }
-    
     const encryptedPassword = encryptPassword(password);
     const user = await User.create({
       username,
       password: encryptedPassword,
-      mcUsername,
+      serverIp,
+      serverPort,
+      serverPassword
     });
     
     console.log('User created successfully:', user.id);
