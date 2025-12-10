@@ -12,7 +12,13 @@ builder.Services.AddRazorComponents()
 
 // API
 builder.Services.AddScoped(sp =>
+<<<<<<< Updated upstream
     new HttpClient { BaseAddress = new Uri("http://localhost:3050/") });
+=======
+    new HttpClient { BaseAddress = new Uri("http://localhost:3000/") });
+builder.Services.AddScoped<CommandService>();
+builder.Services.AddHttpClient();  
+>>>>>>> Stashed changes
 
 var app = builder.Build();
 
@@ -21,5 +27,6 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
 
 app.Run();
