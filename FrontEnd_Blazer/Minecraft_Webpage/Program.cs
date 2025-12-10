@@ -18,6 +18,9 @@ builder.Services.AddScoped(sp =>
     new HttpClient { BaseAddress = new Uri("http://localhost:3000/") });
 builder.Services.AddScoped<CommandService>();
 builder.Services.AddHttpClient();  
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 var app = builder.Build();
