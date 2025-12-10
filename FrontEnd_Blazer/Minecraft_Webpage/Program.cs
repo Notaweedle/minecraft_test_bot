@@ -12,7 +12,7 @@ builder.Services.AddRazorComponents()
 
 // API
 builder.Services.AddScoped(sp =>
-    new HttpClient { BaseAddress = new Uri("http://localhost:3000/") });
+    new HttpClient { BaseAddress = new Uri("http://localhost:3050/") });
 
 var app = builder.Build();
 
