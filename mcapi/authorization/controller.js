@@ -22,6 +22,9 @@ const validate = ajv.compile(schema);
 const encryptPassword = (password) =>
   crypto.createHash('sha256').update(password).digest('hex');
 
+const encryptServerIP = (serverIp) =>
+  crypto.createHash('sha256').update(serverIp).digest('hex');
+
 const generateAccessToken = (username, userId) =>
   jwt.sign({ username, userId }, 'your-secret-key', { expiresIn: '24h' });
 
@@ -49,7 +52,7 @@ exports.register = async (req, res) => {
     const user = await User.create({
       username,
       password: encryptedPassword,
-      serverIp,
+      serverIp: encryptServerIP,
       serverPort,
       serverPassword
     });

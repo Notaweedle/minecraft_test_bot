@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|c:\\users\\doliveira\\documents\\github\\minecraft_test_bot\\frontend_blazer\\minecraft_webpage\\components\\pages\\auth.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|solutionrelative:components\\pages\\auth.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|c:\\users\\doliveira\\documents\\github\\minecraft_test_bot\\frontend_blazer\\minecraft_webpage\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|c:\\users\\doliveira\\documents\\github\\minecraft_test_bot\\frontend_blazer\\minecraft_webpage\\components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|solutionrelative:components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|c:\\users\\doliveira\\documents\\github\\minecraft_test_bot\\frontend_blazer\\minecraft_webpage\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|c:\\users\\doliveira\\documents\\github\\minecraft_test_bot\\frontend_blazer\\minecraft_webpage\\components\\pages\\command.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC09CABF-DD80-4AFB-A359-A87D8D8D62CC}|Minecraft_Webpage.csproj|solutionrelative:components\\pages\\command.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 301,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Pages\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-11T02:21:47.801Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -38,41 +47,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Auth.razor",
-              "DocumentMoniker": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Auth.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Auth.razor",
-              "ToolTip": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Auth.razor",
-              "RelativeToolTip": "Components\\Pages\\Auth.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-11T02:09:59.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Register.razor",
-              "DocumentMoniker": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Register.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Register.razor",
-              "ToolTip": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Register.razor",
-              "RelativeToolTip": "Components\\Pages\\Register.razor",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwCsAAABNAAAAAAAAAA==",
+              "Title": "Command.razor",
+              "DocumentMoniker": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Command.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Command.razor",
+              "ToolTip": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Components\\Pages\\Command.razor",
+              "RelativeToolTip": "Components\\Pages\\Command.razor",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwCoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-11T00:53:36.418Z",
+              "WhenOpened": "2025-12-11T02:21:56.2Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\doliveira\\Documents\\GitHub\\minecraft_test_bot\\FrontEnd_Blazer\\Minecraft_Webpage\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T01:46:55.617Z"
             }
           ]
         }

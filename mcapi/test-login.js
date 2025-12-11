@@ -8,7 +8,7 @@ async function testSignup() {
     });
     
     console.log('Login successful!');
-    console.log('Response:', response.data);
+    console.log('Response:', response.data.token);
   } catch (error) {
     console.error('Login failed:');
     console.error('Status:', error.response?.status);
