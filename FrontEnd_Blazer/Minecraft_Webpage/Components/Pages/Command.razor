@@ -41,8 +41,7 @@
 </div>
 
 @code {
-
-    private List<CommandEntry> commandHistory = new List<CommandEntry>();
+    private List<CommandEntry> commandHistory = new();
     private Message _message = new Message();
 
     private List<Minecraft_Webpage.Data.Command> commands = new();
@@ -67,6 +66,7 @@
         {
             command = text
         });
+    
 
         var validation = await validateResponse.Content.ReadFromJsonAsync<ValidationResult>();
 
@@ -116,6 +116,7 @@
         public string? Result { get; set; }
         public string Text { get; set; } = "";
         public DateTime Timestamp { get; set; }
+        public string? Result { get; set; }
     }
 
 
