@@ -29,12 +29,23 @@
     </div>
 
     <div class="form-floating mb-3">
-        <InputText @bind-Value="Input.MinecraftUsername" id="minecraftUsername" class="form-control" placeholder="Minecraft Username" />
-        <label for="minecraftUsername">Minecraft Username</label>
-        <ValidationMessage For="() => Input.MinecraftUsername" />
+        <InputText @bind-Value="Input.ServerIP" id="serverIP" class="form-control" placeholder="Server IP" />
+        <label for="serverIP">Server IP</label>
+        <ValidationMessage For="() => Input.ServerIP" />
     </div>
 
-    <!-- REMOVED @onclick, kept only type="submit" -->
+    <div class="form-floating mb-3">
+        <InputNumber @bind-Value="Input.ServerPort" id="serverPort" class="form-control" EnableMinMax="true" Min="1" Max="65535" placeholder="RCON Port" />
+        <label for="serverPort">RCON Port</label>
+        <ValidationMessage For="() => Input.ServerPort" />
+    </div>
+
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.RconPassword" id="rconPassword" class="form-control" placeholder="RCON Password" />
+        <label for="rconPassword">RCON Password</label>
+        <ValidationMessage For="() => Input.RconPassword" />
+    </div>
+
     <button type="submit" class="btn btn-primary w-100">Register</button>
 </EditForm>
 
@@ -48,13 +59,16 @@
     {
         try
         {
-            Console.WriteLine($"Registering: Username={Input.Username}, MC={Input.MinecraftUsername}");
+            Console.WriteLine($"Registering: Username={Input.Username}");
 
             var response = await HttpClient.PostAsJsonAsync("signup", new
             {
                 username = Input.Username?.Trim(),
                 password = Input.Password,
-                mcUsername = Input.MinecraftUsername?.Trim()
+                serverIp = Input.ServerIP?.Trim(),
+                serverPort = Input.ServerPort,
+                serverPassword = Input.RconPassword?.Trim(),
+
             });
 
             if (!response.IsSuccessStatusCode)
@@ -89,6 +103,13 @@
 
         [Required]
         [StringLength(50, MinimumLength = 3)]
-        public string MinecraftUsername { get; set; } = "";
+        public string ServerIP { get; set; } = "";
+
+        [Required]
+        public int ServerPort { get; set; }
+
+        [Required]
+        [StringLength(50, MinimumLength = 0)]
+        public string RconPassword { get; set; } = "";
     }
 }
