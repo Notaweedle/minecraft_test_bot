@@ -9,6 +9,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
     "rcon-client": "^4.2.5",
     "srcds-rcon": "github:randunel/node-srcds-rcon"
   }

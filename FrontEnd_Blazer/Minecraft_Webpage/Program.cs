@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,13 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=rcon.db"));
-// API
-builder.Services.AddScoped(sp =>
-    new HttpClient { BaseAddress = new Uri("http://localhost:3050/") });
 builder.Services.AddScoped<CommandService>();
-builder.Services.AddHttpClient();
+
 
 var app = builder.Build();
 

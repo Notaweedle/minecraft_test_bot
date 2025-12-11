@@ -7,18 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // simple whitelist to stop absolute chaos
-const ALLOWED_COMMANDS = [
-    "/give",
-    "/tp",
-    "/summon",
-    "/time",
-    "/weather",
-    "/say",
-    "/gamemode",
-    "/effect",
-    "/title",
-    "/tellraw"
-];
+;
 
 function validateCommand(cmd) {
     if (!cmd) return { ok: false, error: "Missing command" };
@@ -29,9 +18,6 @@ function validateCommand(cmd) {
 
     const base = cmd.split(" ")[0];
 
-    if (!ALLOWED_COMMANDS.includes(base)) {
-        return { ok: false, error: `Command '${base}' is not allowed` };
-    }
 
     // basic structural checks (you can go wild here)
     if (base === "/give") {
