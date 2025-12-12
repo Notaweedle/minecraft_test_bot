@@ -1,0 +1,17 @@
+{
+  "name": "rcon",
+  "version": "1.0.0",
+  "main": "JavaScript.js",
+  "scripts": {
+    "test": "node JavaScript.js"
+  },
+  "author": "The Miners",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "rcon-client": "^4.2.5",
+    "srcds-rcon": "github:randunel/node-srcds-rcon"
+  }
+}
